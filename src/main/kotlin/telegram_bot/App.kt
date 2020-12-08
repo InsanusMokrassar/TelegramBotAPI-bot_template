@@ -1,7 +1,7 @@
 package telegram_bot
 
+import dev.inmo.tgbotapi.bot.Ktor.telegramBot
 import dev.inmo.tgbotapi.extensions.api.bot.getMe
-import dev.inmo.tgbotapi.extensions.api.telegramBot
 
 /**
  * This method by default expects one argument in [args] field: telegram bot token
