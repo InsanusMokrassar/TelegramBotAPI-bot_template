@@ -23,7 +23,7 @@ suspend fun main(args: Array<String>) {
         val me = getMe()
 
         // this method will create point to react on each /start command
-        onCommand("/start", requireOnlyCommandInMessage = true) {
+        onCommand("start", requireOnlyCommandInMessage = true) {
             // simply reply :)
             reply(it, "Hello, I am ${me.firstName}")
         }
