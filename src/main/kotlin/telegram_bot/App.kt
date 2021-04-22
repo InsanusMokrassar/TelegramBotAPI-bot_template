@@ -27,7 +27,5 @@ suspend fun main(args: Array<String>) {
             // simply reply :)
             reply(it, "Hello, I am ${me.firstName}")
         }
-    }
-
-    scope.coroutineContext.job.join()
+    }.join()
 }
