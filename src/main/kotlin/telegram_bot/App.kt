@@ -3,7 +3,7 @@ package telegram_bot
 import dev.inmo.tgbotapi.bot.Ktor.telegramBot
 import dev.inmo.tgbotapi.extensions.api.bot.getMe
 import dev.inmo.tgbotapi.extensions.api.send.reply
-import dev.inmo.tgbotapi.extensions.behaviour_builder.buildBehaviour
+import dev.inmo.tgbotapi.extensions.behaviour_builder.buildBehaviourWithLongPolling
 import dev.inmo.tgbotapi.extensions.behaviour_builder.triggers_handling.onCommand
 import kotlinx.coroutines.*
 
@@ -18,7 +18,7 @@ suspend fun main(args: Array<String>) {
     val scope = CoroutineScope(Dispatchers.Default)
 
     // here should be main logic of your bot
-    bot.buildBehaviour(scope) {
+    bot.buildBehaviourWithLongPolling(scope) {
         // in this lambda you will be able to call methods without "bot." prefix
         val me = getMe()
 
