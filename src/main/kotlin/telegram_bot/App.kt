@@ -27,5 +27,9 @@ suspend fun main(args: Array<String>) {
             // simply reply :)
             reply(it, "Hello, I am ${me.firstName}")
         }
+
+        // That will be called on the end of bot initiation. After that prinln will be started long polling and bot will
+        // react on your commands
+        println(me)
     }.join()
 }

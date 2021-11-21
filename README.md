@@ -17,6 +17,13 @@ output you will get your bot information like:
 ExtendedBot(id=ChatId(chatId=1234567890), username=Username(username=@username_of_your_bot), firstName=Name of bot, lastName=, canJoinGroups=(some boolean), canReadAllGroupMessages=(some boolean), supportsInlineQueries=(some boolean))
 ```
 
+### Docker
+
+In this template there is template-like [docker-compose](docker-compose.yml) and [docker](Dockerfile) files. Besides,
+there is [Makefile](Makefile) and you may use something like `make buildAndStartCompose` to start your bot.
+
+It is important to replace `"TOKEN"` in [Dockerfile](Dockerfile) or remove and add some config as a volume.
+
 ## What next?
 
 There are several ways to continue:

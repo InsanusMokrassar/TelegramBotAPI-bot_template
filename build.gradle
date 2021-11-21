@@ -28,3 +28,8 @@ dependencies {
 application {
     mainClassName = 'telegram_bot.AppKt'
 }
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}
