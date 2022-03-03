@@ -1,0 +1,19 @@
+[versions]
+
+kotlin = "1.6.10"
+tgbotapi = "0.38.6"
+
+[libraries]
+
+kotlin = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlin" }
+tgbotapi = { module = "dev.inmo:tgbotapi", version.ref = "tgbotapi" }
+
+# Libs for classpath
+kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+kotlin-serialization-plugin = { module = "org.jetbrains.kotlin:kotlin-serialization", version.ref = "kotlin" }
+
+[plugins]
+
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+

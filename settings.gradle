@@ -1,1 +1,3 @@
 rootProject.name = 'telegram_bot'
+
+enableFeaturePreview("VERSION_CATALOGS")

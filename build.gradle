@@ -4,14 +4,14 @@ buildscript {
     }
 
     dependencies {
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        classpath "org.jetbrains.kotlin:kotlin-serialization:$kotlin_version"
+        classpath libs.kotlin.gradle.plugin
+        classpath libs.kotlin.serialization.plugin
     }
 }
 
 plugins {
-    id 'org.jetbrains.kotlin.jvm' version "$kotlin_version"
-    id "org.jetbrains.kotlin.plugin.serialization" version "$kotlin_version"
+    alias libs.plugins.kotlin.jvm
+    alias libs.plugins.kotlin.serialization
     id 'application'
 }
 
@@ -20,9 +20,9 @@ repositories {
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation libs.kotlin
 
-    implementation "dev.inmo:tgbotapi:$tgbotapi_version"
+    implementation libs.tgbotapi
 }
 
 application {
