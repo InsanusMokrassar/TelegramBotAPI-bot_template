@@ -16,7 +16,7 @@ suspend fun main(args: Array<String>) {
     // create json to decode config
     val json = Json { ignoreUnknownKeys = true }
     // decode config
-    val config: Config = json.decodeFromString(Config.serializer(), File(args.first).readText())
+    val config: Config = json.decodeFromString(Config.serializer(), File(args.first()).readText())
     // that is your bot
     val bot = telegramBot(config.token)
 
