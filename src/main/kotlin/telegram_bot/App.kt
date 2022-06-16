@@ -5,14 +5,20 @@ import dev.inmo.tgbotapi.extensions.api.bot.getMe
 import dev.inmo.tgbotapi.extensions.api.send.reply
 import dev.inmo.tgbotapi.extensions.behaviour_builder.buildBehaviourWithLongPolling
 import dev.inmo.tgbotapi.extensions.behaviour_builder.triggers_handling.onCommand
+import java.io.File
 import kotlinx.coroutines.*
+import kotlinx.serialization.json.Json
 
 /**
- * This method by default expects one argument in [args] field: telegram bot token
+ * This method by default expects one argument in [args] field: telegram bot condiguration
  */
 suspend fun main(args: Array<String>) {
+    // create json to decode config
+    val json = Json { ignoreUnknownKeys = true }
+    // decode config
+    val config: Config = json.decodeFromString(Config.serializer(), File(args.first).readText())
     // that is your bot
-    val bot = telegramBot(args.first())
+    val bot = telegramBot(config.token)
 
     // that is kotlin coroutine scope which will be used in requests and parallel works under the hood
     val scope = CoroutineScope(Dispatchers.Default)
