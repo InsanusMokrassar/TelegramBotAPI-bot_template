@@ -9,5 +9,6 @@ settings.xml
 build/
 out/
 
-local.properties
+local.*
+local.*/
 secret.gradle
