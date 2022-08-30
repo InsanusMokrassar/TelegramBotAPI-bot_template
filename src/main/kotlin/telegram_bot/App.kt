@@ -34,7 +34,7 @@ suspend fun main(args: Array<String>) {
             reply(it, "Hello, I am ${me.firstName}")
         }
 
-        // That will be called on the end of bot initiation. After that prinln will be started long polling and bot will
+        // That will be called on the end of bot initiation. After that println will be started long polling and bot will
         // react on your commands
         println(me)
     }.join()
