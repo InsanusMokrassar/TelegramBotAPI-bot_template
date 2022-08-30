@@ -10,7 +10,7 @@ import kotlinx.coroutines.*
 import kotlinx.serialization.json.Json
 
 /**
- * This method by default expects one argument in [args] field: telegram bot condiguration
+ * This method by default expects one argument in [args] field: telegram bot configuration
  */
 suspend fun main(args: Array<String>) {
     // create json to decode config
