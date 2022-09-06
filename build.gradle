@@ -26,7 +26,7 @@ dependencies {
 }
 
 application {
-    mainClassName = 'telegram_bot.AppKt'
+    mainClassName = 'AppKt'
 }
 
 java {

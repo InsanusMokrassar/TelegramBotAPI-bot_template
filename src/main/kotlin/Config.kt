@@ -1,5 +1,3 @@
-package telegram_bot
-
 import kotlinx.serialization.Serializable
 
 @Serializable
