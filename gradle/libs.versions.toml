@@ -1,7 +1,7 @@
 [versions]
 
-kotlin = "1.7.20"
-tgbotapi = "4.0.0"
+kotlin = "1.7.21"
+tgbotapi = "4.1.0"
 
 [libraries]
 
