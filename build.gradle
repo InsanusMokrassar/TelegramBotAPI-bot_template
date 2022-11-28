@@ -17,6 +17,7 @@ plugins {
 
 repositories {
     mavenCentral()
+    maven { url "https://git.inmo.dev/api/packages/InsanusMokrassar/maven" }
 }
 
 dependencies {
