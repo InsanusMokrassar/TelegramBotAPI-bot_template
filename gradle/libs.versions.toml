@@ -1,7 +1,7 @@
 [versions]
 
 kotlin = "1.7.22"
-tgbotapi = "5.2.0"
+tgbotapi = "5.2.1"
 
 [libraries]
 
