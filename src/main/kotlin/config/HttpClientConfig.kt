@@ -7,10 +7,7 @@ import io.ktor.client.plugins.*
 import io.ktor.client.request.*
 import io.ktor.http.*
 import kotlinx.serialization.Serializable
-import java.net.Authenticator
-import java.net.InetSocketAddress
-import java.net.PasswordAuthentication
-import java.net.Proxy
+import java.net.*
 import java.util.*
 import java.util.concurrent.TimeUnit
 
@@ -68,8 +65,12 @@ data class HttpClientConfig(
                                     proxyConfig.password ?.toCharArray() ?: error("For Socks proxy you should use both username and password or do not use authentication at all")
                                 )
                                 Authenticator.setDefault(object : Authenticator() {
-                                    override fun getPasswordAuthentication(): PasswordAuthentication {
-                                        return passwordAuthentication
+                                    override fun getPasswordAuthentication(): PasswordAuthentication? {
+                                        return if (requestingHost.lowercase() == proxyConfig.hostname.lowercase()) {
+                                            passwordAuthentication
+                                        } else {
+                                            null
+                                        }
                                     }
                                 })
                             }
