@@ -26,7 +26,7 @@ It is important to replace `"TOKEN"` in [Dockerfile](Dockerfile) or remove and a
 
 There are several ways to continue:
 
-* [Tutorials](https://bookstack.inmo.dev/books/telegrambotapi)
+* [Tutorials](https://docs.inmo.dev/tgbotapi/index.html)
 * [Github readme](https://github.com/InsanusMokrassar/TelegramBotAPI)
 
 In other words, this template (and [TelegramBotAPI library](https://github.com/InsanusMokrassar/TelegramBotAPI)) does
