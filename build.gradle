@@ -24,6 +24,7 @@ dependencies {
     implementation libs.kotlin
 
     implementation libs.tgbotapi
+    implementation libs.ktor.client.okhttp
 }
 
 application {

@@ -1,8 +1,11 @@
+import config.Config
 import dev.inmo.tgbotapi.bot.ktor.telegramBot
 import dev.inmo.tgbotapi.extensions.api.bot.getMe
 import dev.inmo.tgbotapi.extensions.api.send.reply
 import dev.inmo.tgbotapi.extensions.behaviour_builder.buildBehaviourWithLongPolling
 import dev.inmo.tgbotapi.extensions.behaviour_builder.triggers_handling.onCommand
+import io.ktor.client.*
+import io.ktor.client.engine.okhttp.*
 import java.io.File
 import kotlinx.coroutines.*
 import kotlinx.serialization.json.Json
@@ -16,7 +19,14 @@ suspend fun main(args: Array<String>) {
     // decode config
     val config: Config = json.decodeFromString(Config.serializer(), File(args.first()).readText())
     // that is your bot
-    val bot = telegramBot(config.token)
+    val bot = telegramBot(config.token) {
+        client = HttpClient(OkHttp) {
+            config.client ?.apply {
+                // setting up telegram bot client
+                setupConfig()
+            }
+        }
+    }
 
     // that is kotlin coroutine scope which will be used in requests and parallel works under the hood
     val scope = CoroutineScope(Dispatchers.Default)

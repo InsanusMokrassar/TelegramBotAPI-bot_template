@@ -22,6 +22,54 @@ there is [Makefile](Makefile) and you may use something like `make buildAndStart
 
 It is important to replace `"TOKEN"` in [Dockerfile](Dockerfile) or remove and add some config as a volume.
 
+### Config
+
+But you may set up several things for your bot. You should start with adding client object:
+
+```json
+{
+  "token": "your bot token",
+  "client": {
+    "connectionTimeoutMillis": 10000,
+    "requestTimeoutMillis": 10000,
+    "responseTimeoutMillis": 10000,
+    "proxy": {
+      "hostname": "127.0.0.1",
+      "port": 1080,
+      "type": "socks",
+      "username": "username",
+      "password": "password"
+    }
+  }
+}
+```
+
+__Required__ fields:
+
+* `token`
+* `client/proxy/hostname` (if you pass `client` and `proxy` fields) - hostname of proxy server
+* `client/proxy/password` - password for authentication on proxy server, required if `client/proxy/type` is `socks` and `client/proxy/username` passed
+
+__Optional__ fields:
+
+* `client` - object with client configs
+* `client/connectionTimeoutMillis` - timeout for connection to the server
+* `client/requestTimeoutMillis` - timeout for request complete (when request taken on server)
+* `client/responseTimeoutMillis` - timeout for getting a response after request taken on server
+* `client/proxy` - proxy settings
+* `client/proxy/port` - port of proxy server
+* `client/proxy/type` - type of proxy server (can be `socks` or `http`)
+* `client/proxy/username` - username for authentication on proxy server
+* `client/proxy/password` - password for authentication on proxy server
+
+Basically, your config looks like an object with token:
+
+```json
+{
+  "token": "your bot token"
+}
+```
+
 ## What next?
 
 There are several ways to continue:
