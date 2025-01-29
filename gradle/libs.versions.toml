@@ -1,7 +1,7 @@
 [versions]
 
 kotlin = "2.1.0"
-tgbotapi = "23.1.0"
+tgbotapi = "23.1.2"
 ktor = "3.0.3"
 
 [libraries]
