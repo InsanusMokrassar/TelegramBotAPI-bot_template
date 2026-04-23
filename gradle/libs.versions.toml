@@ -1,6 +1,6 @@
 [versions]
 
-kotlin = "2.1.20"
+kotlin = "2.3.21"
 tgbotapi = "24.0.2"
 ktor = "3.1.2"
 
